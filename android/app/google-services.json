@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "362821053485",
+    "firebase_url": "https://holi-app-c7a8e.firebaseio.com",
+    "project_id": "holi-app-c7a8e",
+    "storage_bucket": "holi-app-c7a8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:362821053485:android:cf440986b965a8b2849ca4",
+        "android_client_info": {
+          "package_name": "com.stringswaytech.holi_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "362821053485-kelaqusqv5l72os2ah9n231vd81saocu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB200sA1WBLznNtAxxSbddAE_QW-3gwNXQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "362821053485-kelaqusqv5l72os2ah9n231vd81saocu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
