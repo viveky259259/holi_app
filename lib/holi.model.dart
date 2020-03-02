@@ -7,6 +7,4 @@ class HoliModel{
   HoliModel(this.title, this.description);
 
 
-
-
 }

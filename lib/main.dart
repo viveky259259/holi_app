@@ -53,7 +53,7 @@ class HoliAppState extends State<HoliApp> {
 
   void navigateToDetails(model) {
     Navigator.of(context)
-        .push(MaterialPageRoute(builder: (cotext) => HoliDetails(model)));
+        .push(MaterialPageRoute(builder: (context) => HoliDetails(model)));
   }
 
   Future<List<HoliModel>> getdata() async {
@@ -71,26 +71,38 @@ class HoliAppState extends State<HoliApp> {
     return holi;
   }
 
+  List<HoliModel> getModels(QuerySnapshot docs) {
+    List<HoliModel> holi = [];
+
+    docs.documents.forEach((doc) {
+      HoliModel holi_model = HoliModel(doc["title"], doc["description"]);
+      holi.add(holi_model);
+    });
+    return holi;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           title: Text("Holi App"),
         ),
-        body: FutureBuilder(
-            future: getdata(),
+        body: StreamBuilder(
+            stream: Firestore.instance.collection("details").snapshots(),
             builder: (BuildContext context, AsyncSnapshot snapshot) {
               if (!snapshot.hasData)
                 return Center(
                   child: CircularProgressIndicator(),
                 );
+              List<HoliModel> list = getModels(snapshot.data);
               return ListView.builder(
-                itemCount: snapshot.data.length,
+                itemCount: list.length,
                 itemBuilder: (context, index) {
 //
 //                  HoliModel h = HoliModel(snapshot.data[index]['title'],
 //                      snapshot.data[index]['description']);
-                  return HoliWidgetItem(snapshot.data[index], navigateToDetails);
+
+                  return HoliWidgetItem(list[index], navigateToDetails);
                 },
               );
             }));
