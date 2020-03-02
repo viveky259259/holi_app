@@ -2,6 +2,11 @@
 
 A new Flutter application.
 
+This app was created in GDGNashik Flutter meetup on 1st March 2020 by me on topic ` Flutter with firebase`.
+
+
+In this app we are giving tips on precautions to take during holi
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
